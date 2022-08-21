@@ -1,0 +1,29 @@
+
+input ContactInput {
+    phone: String
+    email: String
+}
+
+input PersonalDataInput {
+    age: Int
+}
+
+input AccountInput {
+    id: String!
+    # Optional field (Java string), mapped with Optional in Java
+    fullname: String
+
+    # Optional input type (Optional Java record)
+    contact: ContactInput
+
+    # Optional input type (Optional Java class)
+    personalData: PersonalDataInput
+}
+
+type Mutation {
+    createAccount(input: AccountInput!): String!
+}
+
+type Query {
+    ping: String
+}
